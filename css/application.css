@@ -1,0 +1,62 @@
+*{ font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;  }
+textarea{ resize: none; }
+a{ font-weight: bold; }
+label{ font-weight:normal; }
+.txt_right{ text-align: right!important; }
+.txt_center{ text-align: center!important; }
+input[readonly]{ background-color: #eee!important; cursor: pointer!important; }
+/*--- ---*/
+.table{ margin-bottom: 0px; }
+.panel-title{ padding-top: 8px; padding-left: 10px; color: #333; }
+.well-sm{ margin-bottom: 10px; }
+.btn-default.active{ background: #2C3E50!important; color: #fff!important; }
+.ui-grid-viewport{ background: #fff; }
+/*--- ---*/
+.BG_EMERALD{ 	background: #2ECC71; } 	.TXT_EMERALD{ 	color: #2ECC71; }
+.BG_NEPHRITIS{ 	background: #27AE60; } 	.TXT_NEPHRITIS{ color: #27AE60; }
+.BG_ORANGE{ 	background: #F39C12; } 	.TXT_ORANGE{ 	color: #F39C12; }
+.BG_CARROT{ 	background: #E67E22; } 	.TXT_CARROT{ 	color: #E67E22; }
+.BG_PUMPKIN{ 	background: #D35400; } 	.TXT_PUMPKIN{ 	color: #D35400; }
+.BG_ALIZARIN{ 	background: #E74C3C; } 	.TXT_ALIZARIN{ 	color: #E74C3C; }
+.BG_RIVER{ 		background: #3498DB; } 	.TXT_RIVER{ 	color: #3498DB; }
+.BG_AMETHYST{ 	background: #9B59B6; } 	.TXT_AMETHYST{ 	color: #9B59B6; }
+.BG_AMETHYSTL{ 	background: #BE90D4; } 	.TXT_AMETHYSTL{	color: #BE90D4; }
+.BG_MIDNIGHT{ 	background: #2C3E50; } 	.TXT_MIDNIGHT{	color: #2C3E50; }
+.BG_CLOUDS{ 	background: #ECF0F1; } 	.TXT_CLOUDS{ 	color: #ECF0F1; }
+.BG_SILVER{ 	background: #BDC3C7; } 	.TXT_SILVER{ 	color: #BDC3C7; }
+/*--- modal (popup) ---*/
+.modal{ display: block; }
+.modal-backdrop { z-index: -1; }
+.modal-sm{ width:50%; left: 50%; margin-left: -25%;  }
+/*--- ---*/
+.no-padding{ padding-left:0px!important; padding-right: 0px!important; }
+.no-padding-right{ padding-right: 0px!important; }
+.warpper{ background: #ECF0F1; display: block; }
+.isSelected{  background: #2C3E50!important; color: #fff!important; }
+.top5s{ padding: 5px; }
+.top10{ padding-top: 10px; }
+.marginBt10{ margin-bottom: 10px; }
+.content{ display: block; overflow: auto; padding-top: 10px; }
+.hrBorder{ width: 80%; margin:10px auto; border:1px solid #2C3E50; text-align:center;  }
+
+.form-lab .btn-default{ width: 25%; }
+.row40{ height: 40px; } .line40{ line-height: 35px; }
+.row50{ height: 50px; }
+.padding10{ padding-top: 10px; padding-bottom: 10px; }
+.panelBlock{
+	display: block; overflow: auto; padding-bottom: 10px; padding-top: 10px;
+	background: #fff; border:1px solid #dddddd; border-top: 0px;
+}
+
+.cellNumber{ text-align: right; padding-right: 10px; }
+.block_auth{
+	display: block;
+	margin-top: 100px;
+	padding: 15px; border-radius: 15px;
+	padding-bottom: 20px;
+	background-color: #ecf0f1;
+}
+/*--- slid menu ---*/
+.menu_item{ padding-left: 15px; line-height: 25px; display: block; width: 100%; }
+
+.ico_cur{ cursor: pointer; }

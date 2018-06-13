@@ -1,0 +1,83 @@
+<div ng-controller="CtrlM03" ng-init="init();">
+	<div class="col-xs-12 no-padding warpper" >
+		<div class="content" >
+			<div class="col-xs-12"><h4>ชื่อเครื่องแพทย์ แบ่งตาม Life Expectancy</h4></div>
+<!--			<div class="col-xs-12">&nbsp;</div> -->
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>ID</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id" ng-readonly="true"/></div>
+				<div class="col-xs-1 no-padding-right">
+					<label>ID Key</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id_key" ng-readonly="true" /></div>
+			</div>
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>UMDNS Description</label>
+				</div>
+				<div class="col-xs-5"><input type="text" class="form-control input-sm" ng-model="arg.umdns_desc"/></div>
+			</div>
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>Life Expectancy (years) </label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.life_expectancy" /></div>
+				<div class="col-xs-2 no-padding-right">
+					<label>GMDN Device Category Cade</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.gmdn_dev_cc" /></div>
+				<div class="col-xs-2 no-padding-right">
+					<label>UMDNS Device Group </label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.umdns_dev_grp" /></div>
+			</div>
+		</div>
+		<div class="col-xs-12 top5s">
+			<div class="btn btn-info" ng-click="FormClean();">ล้างข้อมูล</div>
+			<div class="btn btn-info" ng-click="grid_feed();">แสดงรายการ</div>
+			<div class="btn btn-info" ng-click="saveData();">บันทึกข้อมูล</div>
+			<div class="btn btn-info" ng-click="showPopUp(1,'ต้องการยกเลิกรายการหรือไม่');">ยกเลิกรายการ</div>
+		</div>
+  		<div class="col-xs-12">&nbsp;</div>
+		<div class="col-xs-12">
+			<div ng-if="!gridRefresh" ui-grid="gridOption" ui-grid-resize-columns ui-grid-move-columns  style="height: {{_height-300}}px;"></div>
+		</div>
+	</div>
+	<!-- The Modals -->
+	<div class="modal" ng-show="_showPopUp[0]">
+		<div class="modal-backdrop in"></div>
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" ng-click="closePopUp(0);">&times;</button>
+					<h4 class="modal-title">{{PopUpTitle}}</h4>
+				</div>
+				<div class="modal-body" ng-bind-html="PopUpMsg"></div>
+				<div class="modal-footer">
+					<button class="btn btn-danger" ng-click="closePopUp(0);">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" ng-show="_showPopUp[1]">
+		<div class="modal-backdrop in"></div>
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" ng-click="closePopUp(1);">&times;</button>
+					<h4 class="modal-title">{{PopUpTitle}}</h4>
+				</div>
+				<div class="modal-body" ng-bind-html="PopUpMsg"></div>
+				<div class="modal-footer">
+					<button class="btn btn-info" ng-click="delData();">Yes</button>
+					<button class="btn btn-info" ng-click="closePopUp(1);">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>

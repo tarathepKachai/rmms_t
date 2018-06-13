@@ -1,0 +1,32 @@
+<div ng-controller="SidebarCtrl" ng-init="init();">
+	<div class="app-name BG_AMETHYST">
+		<h1 style="padding-top: 10px;">การทำงาน</h1>
+	</div>
+	<div class="scrollable sidebar-scrollable BG_MIDNIGHT" style="padding-top: 49px;">
+		<div class="scrollable-content">
+			<!--
+			<div class="list-group" toggle="off" bubble target="mainSidebar">
+			-->
+			<div class="list-group" style="margin-bottom: 0px;">
+				<div class="list-group-item" ng-if="level_0" ng-repeat="level_0 in _list track by $index">
+					<div class="menu_item" >
+						{{level_0.label}}
+					</div>
+					<div class="menu_item" >
+						<div ng-if="level_1" ng-repeat="level_1 in level_0.child track by $index">
+							<div class="menu_item ico_cur" ng-click="_menu[level_1.value]=!_menu[level_1.value]">
+								{{level_1.label}} >>
+							</div>
+							<div class="menu_item" ng-show="_menu[level_1.value]" toggle="off" bubble target="mainSidebar">
+								<a class="menu_item" ng-if="level_2" ng-repeat="level_2 in level_1.child track by $index" href="{{_genUrl(level_2.value)}}">
+									{{level_2.label}}
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="list-group-item" ng-click="logout();">ออกจากระบบ</a>
+			</div>
+		</div>
+	</div>
+</div>

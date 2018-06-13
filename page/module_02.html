@@ -1,0 +1,102 @@
+<div ng-controller="CtrlM02" ng-init="init();">
+    <div class="col-xs-12 no-padding warpper" >
+        <div class="content" >
+            <div class="col-xs-12"><h4>บันทึกชื่อเครื่องแพทย์ตามรหัสมาตรฐานสากล</h4></div>
+            <!--			<div class="col-xs-12">&nbsp;</div> -->
+            <div class="col-xs-12 no-padding top5s">
+                <div class="col-xs-2 no-padding-right">
+                    <label>ID</label>
+                </div>
+                <div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id" ng-readonly="true"/></div>
+                <div class="col-xs-1 no-padding-right">
+                    <label>ID Key</label>
+                </div>
+                <div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id_key" ng-readonly="true" /></div>
+            </div>
+            <div class="col-xs-12 no-padding top5s">
+                <div class="col-xs-2 no-padding-right">
+                    <label>Code</label>
+                </div>
+                <div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.code" /></div>
+                <div class="col-xs-1 no-padding-right">
+                    <label>UMSDN</label>
+                </div>
+                <div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.umdns" /></div>
+                <div class="col-xs-1 no-padding-right">
+                    <label>ชื่อย่อ</label>
+                </div>
+                <div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.short" /></div>
+            </div>
+            <div class="col-xs-12 no-padding top5s">
+                <div class="col-xs-2 no-padding-right">
+                    <label>ชื่อภาษาอังกฤษ</label>
+                </div>
+                <div class="col-xs-5"><input type="text" class="form-control input-sm" ng-model="arg.name_eng"/></div>
+            </div>
+            <div class="col-xs-12 no-padding top5s">
+                <div class="col-xs-2 no-padding-right">
+                    <label>ชื่อภาษาไทย</label>
+                </div>
+                <div class="col-xs-5"><input type="text" class="form-control input-sm" ng-model="arg.name_thai"/></div>
+            </div>
+
+        </div>
+        <div class="col-xs-12 top5s">
+            <div class="btn btn-info" ng-click="FormClean();">ล้างข้อมูล</div>
+            <div class="btn btn-info" ng-click="grid_feed();">แสดงรายการ</div>
+            <div class="btn btn-info" ng-click="saveData();">บันทึกข้อมูล</div>
+            <div class="btn btn-info" ng-click="showPopUp(1, 'ต้องการยกเลิกรายการหรือไม่');">ยกเลิกรายการ</div>
+
+            <div class="btn btn-info" ng-click="barcodeGen();">พิมพ์บาร์โค้ด</div> <!--            Topten button-->
+        </div>
+       <div class="col-xs-12 top5s"> <!-- Topten-->
+            <svg id="barcode" >
+
+            </svg><br>
+
+
+            <div id="theDiv" style="display: none;height: 100px;width: 150px;text-align: center;">
+                <span>xx</span>
+            </div>
+
+        </div>
+        <!-- Topten End-->
+        <div class="col-xs-12">&nbsp;</div>
+        <div class="col-xs-12">
+            <div ng-if="!gridRefresh" ui-grid="gridOption" ui-grid-resize-columns ui-grid-move-columns  style="height: {{_height - 330}}px;"></div>
+        </div>
+    </div>
+    <!-- The Modals -->
+    <div class="modal" ng-show="_showPopUp[0]">
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" ng-click="closePopUp(0);">&times;</button>
+                    <h4 class="modal-title">{{PopUpTitle}}</h4>
+                </div>
+                <div class="modal-body" ng-bind-html="PopUpMsg"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" ng-click="closePopUp(0);">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" ng-show="_showPopUp[1]">
+        <div class="modal-backdrop in"></div>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" ng-click="closePopUp(1);">&times;</button>
+                    <h4 class="modal-title">{{PopUpTitle}}</h4>
+                </div>
+                <div class="modal-body" ng-bind-html="PopUpMsg"></div>
+                <div class="modal-footer">
+                    <button class="btn btn-info" ng-click="delData();">Yes</button>
+                    <button class="btn btn-info" ng-click="closePopUp(1);">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

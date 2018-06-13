@@ -1,0 +1,90 @@
+<div ng-controller="CtrlM13" ng-init="init();">
+	<div class="col-xs-12 no-padding warpper" >
+		<div class="content" >
+			<div class="col-xs-12"><h4>ข้อมูลบริษัทผู้จำหน่าย</h4></div>
+<!--			<div class="col-xs-12">&nbsp;</div> -->
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>ID</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id" ng-readonly="true"/></div>
+				<div class="col-xs-1 no-padding-right">
+					<label>ID Key</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.id_key" ng-readonly="true" /></div>
+			</div>
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>บริษัทจำหน่าย</label>
+				</div>
+				<div class="col-xs-5"><input type="text" class="form-control input-sm" ng-model="arg.supply"/></div>
+			</div>
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>ที่อยู่</label>
+				</div>
+				<div class="col-xs-5"><textarea ng-model="arg.address"  class="form-control input-sm" rows="4" ></textarea></div> 
+			</div>	
+			<div class="col-xs-12 no-padding top5s">
+				<div class="col-xs-2 no-padding-right">
+					<label>Tel</label>
+				</div>
+				<div class="col-xs-2"><input type="text" class="form-control input-sm" ng-model="arg.tel" /></div>
+				<div class="col-xs-1 no-padding-right">
+					<label>ผู้ติดต่อ</label>
+				</div>
+				<div class="col-xs-2"><input type="text" class="form-control input-sm" ng-model="arg.cont_name" /></div>
+				<div class="col-xs-1 no-padding-right">
+					<label>รหัสงานพัสุด</label>
+				</div>
+				<div class="col-xs-1"><input type="text" class="form-control input-sm" ng-model="arg.code_ref" /></div>
+
+			</div>
+		</div>
+		<div class="col-xs-12 top5s">
+			<div class="btn btn-info" ng-click="FormClean();">ล้างข้อมูล</div>
+			<div class="btn btn-info" ng-click="grid_feed();">แสดงรายการ</div>
+			<div class="btn btn-info" ng-click="saveData();">บันทึกข้อมูล</div>
+			<div class="btn btn-info" ng-click="showPopUp(1,'ต้องการยกเลิกรายการหรือไม่');">ยกเลิกรายการ</div>
+		</div>
+  		<div class="col-xs-12">&nbsp;</div>
+		<div class="col-xs-12">
+			<div ng-if="!gridRefresh" ui-grid="gridOption" ui-grid-resize-columns ui-grid-pagination style="height: {{_height-400}}px;"></div>
+		</div>
+	</div>
+	<!-- The Modals -->
+	<div class="modal" ng-show="_showPopUp[0]">
+		<div class="modal-backdrop in"></div>
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" ng-click="closePopUp(0);">&times;</button>
+					<h4 class="modal-title">{{PopUpTitle}}</h4>
+				</div>
+				<div class="modal-body" ng-bind-html="PopUpMsg"></div>
+				<div class="modal-footer">
+					<button class="btn btn-danger" ng-click="closePopUp(0);">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal" ng-show="_showPopUp[1]">
+		<div class="modal-backdrop in"></div>
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button class="close" ng-click="closePopUp(1);">&times;</button>
+					<h4 class="modal-title">{{PopUpTitle}}</h4>
+				</div>
+				<div class="modal-body" ng-bind-html="PopUpMsg"></div>
+				<div class="modal-footer">
+					<button class="btn btn-info" ng-click="delData();">Yes</button>
+					<button class="btn btn-info" ng-click="closePopUp(1);">No</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</div>
